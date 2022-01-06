@@ -21,19 +21,18 @@ html {
 
 .display-section {
   height: 100vh;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .container {
-  padding: 9.6rem 4.8rem;
+  padding: 7.5rem 3.75rem;
   height: 100%;
 }
 
 .primary-heading {
-  font-size: 4.8rem;
+  font-size: 4.6rem;
   color: #222;
   font-weight: 700;
   line-height: 1;
@@ -43,7 +42,7 @@ html {
 
 .button {
   letter-spacing: 1px;
-  padding: 2rem 10rem;
+  padding: 1.5rem 8rem;
   border-radius: 8px;
   border: none;
   text-transform: uppercase;
@@ -74,6 +73,14 @@ html {
   box-shadow: 0 0 5rem rgba(0, 0, 0, 0.1);
 }
 
+.game-display {
+  max-width: 350px;
+  display: flex;
+  gap: 3rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
 /* ====MAIN SCREEN SECTION=== */
 
 .main-screen {
@@ -82,6 +89,7 @@ html {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding: 0 25px;
 }
 
 .buttons-container {
@@ -91,8 +99,12 @@ html {
   gap: 2rem;
 }
 
+.help-btn {
+  width: 100%;
+}
+
 .author-copyrights {
-  margin-top: 9.6rem;
+  margin-top: 4.8rem;
   text-align: center;
   font-size: 1.8rem;
   font-style: italic;
@@ -102,6 +114,8 @@ html {
 /* ====GAME SCREEN SECTION==== */
 .start-screen {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .status-bar {
@@ -121,12 +135,15 @@ html {
 .back-btn:hover {
   transform: scale(1.05);
 }
-.back-icon {
+.icon {
   color: #333;
   font-size: 6.4rem;
   font-weight: 400;
 }
 
+.scores-container {
+  text-align: right;
+}
 .score-text {
   font-size: 2.2rem;
   font-weight: 600;
@@ -137,7 +154,7 @@ html {
   border: 3px solid #333;
   border-radius: 8px;
   min-width: 345px;
-  height: 450px;
+  flex: 1 1 auto;
   margin-bottom: 1.2rem;
 }
 
@@ -149,6 +166,85 @@ html {
   padding: 1.8rem 0;
   width: 11rem;
   font-size: 1.4rem;
+}
+
+/* ====ANIMATIONS==== */
+.btn-animation-div {
+  display: flex;
+  animation-name: helpDiv;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.help-btn {
+  animation-name: helpBtn;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.help-modal {
+  width: 50rem;
+  height: 40rem;
+  background-color: white;
+  padding: 4rem;
+  border-radius: 9px;
+}
+
+.modal-bar {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.modal-bar button {
+  background: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-bar button ion-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.help-modal h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  margin: 0 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.help-modal p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin: 0 2rem;
+}
+
+@keyframes helpDiv {
+  to {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes helpBtn {
+  to {
+    display: inline-block;
+    width: 50rem;
+    height: 40rem;
+    color: transparent;
+  }
 }
 
 /* ====HIDDEN CLASS==== */
