@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rock, Paper &amp; Scissors</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+    <script defer src="/javascript/buttons.js"></script>
+  </head>
+  <body>
+    <section class="display-section">
+      <div class="container game-display">
+        <div class="main-screen">
+          <h1 class="primary-heading">Rock, Paper and Scissors</h1>
+          <div class="buttons-container">
+            <button class="button primary-btn start-btn">Start</button>
+            <button class="button secondary-btn help-btn">Help</button>
+            <footer><p class="author-copyrights">&copy; Pedro Silva</p></footer>
+          </div>
+        </div>
+        <div class="start-screen hidden">
+          <div class="status-bar">
+            <button class="back-btn">
+              <ion-icon
+                class="back-icon"
+                name="chevron-back-outline"
+              ></ion-icon>
+            </button>
+            <p class="score-text">Score: <span class="score-points">0</span></p>
+          </div>
+          <div class="match-display"></div>
+          <div class="options-container">
+            <button class="button option-btn primary-btn rock-btn">Rock</button>
+            <button class="button option-btn primary-btn paper-btn">
+              Paper
+            </button>
+            <button class="button option-btn primary-btn scissor-btn">
+              Scissors
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

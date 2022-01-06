@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap");
+
+/* ====GLOBAL RESET===== */
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 30rem rgba(0, 0, 0, 0.1);
+}
+
+/* ===GENERAL STYLES=== */
+
+.display-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 9.6rem 4.8rem;
+  height: 100%;
+}
+
+.primary-heading {
+  font-size: 4.8rem;
+  color: #222;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1px;
+  width: 30rem;
+}
+
+.button {
+  letter-spacing: 1px;
+  padding: 2rem 10rem;
+  border-radius: 8px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 600;
+  transition: all ease 0.1s;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #364fc7;
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background: #2b3f9f;
+  transform: scale(1.05);
+  box-shadow: 0 0 5rem rgba(0, 0, 0, 0.1);
+}
+
+.secondary-btn {
+  outline: 3px solid #364fc7;
+  color: #364fc7;
+}
+
+.secondary-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5rem rgba(0, 0, 0, 0.1);
+}
+
+/* ====MAIN SCREEN SECTION=== */
+
+.main-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons-container {
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.author-copyrights {
+  margin-top: 9.6rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ====GAME SCREEN SECTION==== */
+.start-screen {
+  height: 100%;
+}
+
+.status-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+}
+.back-icon {
+  color: #333;
+  font-size: 6.4rem;
+  font-weight: 400;
+}
+
+.score-text {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.match-display {
+  border: 3px solid #333;
+  border-radius: 8px;
+  min-width: 345px;
+  height: 450px;
+  margin-bottom: 1.2rem;
+}
+
+.options-container {
+  display: flex;
+  justify-content: space-between;
+}
+.option-btn {
+  padding: 1.8rem 0;
+  width: 11rem;
+  font-size: 1.4rem;
+}
+
+/* ====HIDDEN CLASS==== */
+
+.hidden {
+  display: none;
+  visibility: none;
+}
