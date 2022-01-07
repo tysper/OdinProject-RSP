@@ -27,7 +27,7 @@ html {
 }
 
 .container {
-  padding: 7.5rem 3.75rem;
+  padding: 7.5rem 3.75rem 7.5rem 2rem;
   height: 100%;
 }
 
@@ -76,9 +76,47 @@ html {
 .game-display {
   max-width: 350px;
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   overflow-x: hidden;
   position: relative;
+}
+
+/* ====HELP SECTION==== */
+
+.help-screen {
+  flex: 0 0 350px;
+  transition: visibility ease 0.3s;
+}
+
+.help-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 3rem;
+}
+
+.help-bar button {
+  background: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+.help-bar button ion-icon {
+  font-size: 5.6rem;
+}
+
+.help-screen h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.help-screen p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
 }
 
 /* ====MAIN SCREEN SECTION=== */
@@ -88,8 +126,8 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: visibility ease 0.3s;
   align-items: center;
-  padding: 0 25px;
 }
 
 .buttons-container {
@@ -115,6 +153,7 @@ html {
 .start-screen {
   height: 100%;
   display: flex;
+  transition: visibility ease 0.3s;
   flex-direction: column;
 }
 
@@ -168,82 +207,33 @@ html {
   font-size: 1.4rem;
 }
 
-/* ====ANIMATIONS==== */
-.btn-animation-div {
+/* =====LOADING==== */
+.loading {
   display: flex;
-  animation-name: helpDiv;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-
-.help-btn {
-  animation-name: helpBtn;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-
-.help-modal {
-  width: 50rem;
-  height: 40rem;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
   background-color: white;
-  padding: 4rem;
-  border-radius: 9px;
+  z-index: 2;
+  transition: all ease 1s;
 }
 
-.modal-bar {
-  width: 100%;
-  display: flex;
-  justify-content: end;
+.loading .spinner {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 15px solid rgb(223, 223, 223);
+  border-top: 15px solid #364fc7;
+  animation: rotate 1s ease 10;
 }
 
-.modal-bar button {
-  background: transparent;
-  color: #333;
-  border: none;
-  cursor: pointer;
-}
-
-.modal-bar button ion-icon {
-  width: 42px;
-  height: 42px;
-}
-
-.help-modal h2 {
-  font-size: 2.4rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-weight: 600;
-  margin: 0 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.help-modal p {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  letter-spacing: 1px;
-  margin: 0 2rem;
-}
-
-@keyframes helpDiv {
+@keyframes rotate {
   to {
-    top: 0;
-    left: 0;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-}
-
-@keyframes helpBtn {
-  to {
-    display: inline-block;
-    width: 50rem;
-    height: 40rem;
-    color: transparent;
+    transform: rotate(1turn);
   }
 }
 
@@ -252,4 +242,5 @@ html {
 .hidden {
   display: none;
   visibility: none;
+  transition: 1s;
 }

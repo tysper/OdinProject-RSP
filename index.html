@@ -19,30 +19,32 @@
     <script defer src="./javascript/buttons.js"></script>
   </head>
   <body>
+    <div class="loading">
+      <div class="spinner"></div>
+    </div>
     <section class="display-section">
       <div class="container game-display">
+        <div class="help-screen">
+          <div class="help-bar">
+            <button class="back-btn-help">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <h2>Rock, Paper and Scissors Rules:</h2>
+          </div>
+          <p>
+            The game itself is pretty simple and it looks a lot like the real
+            life game, all you gotta do is press the buttons to choose your next
+            move, the computer will choose its move automatically, and the score
+            will be added to the match winner, whoever gets five points first is
+            the winner. <strong>Good luck!</strong>
+          </p>
+        </div>
         <div class="main-screen">
           <h1 class="primary-heading">Rock, Paper and Scissors</h1>
           <div class="buttons-container">
             <button class="button primary-btn start-btn">Start</button>
-            <div class="btn-animation-div">
-              <button class="button secondary-btn help-btn hidden">Help</button>
-              <div class="help-modal">
-                <div class="modal-bar">
-                  <button>
-                    <ion-icon name="close-outline"></ion-icon>
-                  </button>
-                </div>
-                <h2>Rock, Paper and Scissors Rules:</h2>
-                <p>
-                  The game itself is pretty simple and it looks a lot like the
-                  real life game, all you gotta do is press the buttons to
-                  choose your next move, the computer will choose its move
-                  automatically, and the score will be added to the match
-                  winner, whoever gets five points first is the winner.
-                </p>
-              </div>
-            </div>
+            <button class="button secondary-btn help-btn">Help</button>
+
             <footer><p class="author-copyrights">&copy; Pedro Silva</p></footer>
           </div>
         </div>
