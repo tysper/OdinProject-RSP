@@ -64,7 +64,7 @@ html {
 }
 
 .secondary-btn {
-  outline: 3px solid #364fc7;
+  border: 3px solid #364fc7;
   color: #364fc7;
 }
 
@@ -76,7 +76,7 @@ html {
 .game-display {
   max-width: 350px;
   display: flex;
-  gap: 2rem;
+  /* gap: 2rem; */
   overflow-x: hidden;
   position: relative;
   scroll-behavior: smooth;
@@ -211,7 +211,7 @@ html {
 }
 
 /* =====LOADING==== */
-.loading {
+/* .loading {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,8 +238,22 @@ html {
   to {
     transform: rotate(1turn);
   }
+} */
+
+.scrollToMain {
+  transform: translateX(-350px);
+  transition: transform ease 0.3s;
 }
 
+.scrollToHelp {
+  transform: translateX(0);
+  transition: transform ease 0.3s;
+}
+
+.scrollToGame {
+  transform: translateX(-700px);
+  transition: transform ease 0.3s;
+}
 /* ====HIDDEN CLASS==== */
 
 .hidden {
