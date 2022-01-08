@@ -11,66 +11,36 @@ const backButtonHelp = document.querySelector(".back-btn-help");
 const initialScreen = document.querySelector(".main-screen");
 const gameScreen = document.querySelector(".start-screen");
 const helpScreen = document.querySelector(".help-screen");
+const screens = [helpScreen, initialScreen, gameScreen];
 
 // ====FUNCTIONS =====
-function hideElement(element) {
-  element.style.visibility = "hidden";
-  return element;
-}
-
-function showElement(element) {
-  element.style.visibility = "visible";
-  return element;
+function toggleClass(className, elementsList) {
+  elementsList.forEach((x) => {
+    x.classList.toggle(`${className}`);
+  });
+  return elementsList;
 }
 
 // ====EVENT LISTENERS ====
 startButton.addEventListener("click", (a) => {
-  // hideElement(initialScreen);
-  // gameScreen.scrollIntoView({ behavior: "smooth", block: "center" });
-  // showElement(gameScreen);
-  initialScreen.classList.toggle("scrollToMain");
-  helpScreen.classList.toggle("scrollToMain");
-  gameScreen.classList.toggle("scrollToMain");
-  initialScreen.classList.toggle("scrollToGame");
-  helpScreen.classList.toggle("scrollToGame");
-  gameScreen.classList.toggle("scrollToGame");
+  toggleClass("scrollToMain", screens);
+  toggleClass("scrollToGame", screens);
 });
 
 backButton.addEventListener("click", (a) => {
-  // hideElement(gameScreen);
-  // initialScreen.scrollIntoView({ behavior: "smooth", block: "center" });
-  // showElement(initialScreen);
-  initialScreen.classList.toggle("scrollToGame");
-  helpScreen.classList.toggle("scrollToGame");
-  gameScreen.classList.toggle("scrollToGame");
-  initialScreen.classList.toggle("scrollToMain");
-  helpScreen.classList.toggle("scrollToMain");
-  gameScreen.classList.toggle("scrollToMain");
+  toggleClass("scrollToGame", screens);
+  toggleClass("scrollToMain", screens);
 });
 
 backButtonHelp.addEventListener("click", (a) => {
-  // hideElement(helpScreen);
-  // initialScreen.scrollIntoView({ behavior: "smooth", block: "center" });
-  // showElement(initialScreen);
-  initialScreen.classList.toggle("scrollToMain");
-  helpScreen.classList.toggle("scrollToMain");
-  gameScreen.classList.toggle("scrollToMain");
+  toggleClass("scrollToMain", screens);
 });
 
 helpButton.addEventListener("click", (a) => {
-  // hideElement(initialScreen);
-  // helpScreen.scrollIntoView({ behavior: "smooth", block: "center" });
-  // showElement(helpScreen);
-  initialScreen.classList.toggle("scrollToMain");
-  helpScreen.classList.toggle("scrollToMain");
-  gameScreen.classList.toggle("scrollToMain");
-  initialScreen.classList.toggle("scrollToHelp");
-  helpScreen.classList.toggle("scrollToHelp");
-  gameScreen.classList.toggle("scrollToHelp");
+  toggleClass("scrollToMain", screens);
+  toggleClass("scrollToHelp", screens);
   setTimeout(() => {
-    initialScreen.classList.toggle("scrollToHelp");
-    helpScreen.classList.toggle("scrollToHelp");
-    gameScreen.classList.toggle("scrollToHelp");
+    toggleClass("scrollToHelp", screens);
   }, 300);
 });
 
@@ -79,6 +49,4 @@ setTimeout(() => {
   loadingScreen.classList.add("hidden");
 }, 3000);
 
-// initialScreen.scrollIntoView();
-// hideElement(helpScreen);
-// hideElement(gameScreen);
+toggleClass("scrollToMain", screens);

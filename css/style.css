@@ -211,7 +211,7 @@ html {
 }
 
 /* =====LOADING==== */
-/* .loading {
+.loading {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,8 +238,9 @@ html {
   to {
     transform: rotate(1turn);
   }
-} */
+}
 
+/* ====SCROLL ANIMATIONS==== */
 .scrollToMain {
   transform: translateX(-350px);
   transition: transform ease 0.3s;
