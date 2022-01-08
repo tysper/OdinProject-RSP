@@ -11,6 +11,8 @@ const gameScreen = document.querySelector(".start-screen");
 const helpScreen = document.querySelector(".help-screen");
 
 initialScreen.scrollIntoView();
+hideElement(helpScreen);
+hideElement(gameScreen);
 
 function hideElement(element) {
   element.style.visibility = "hidden";
@@ -22,12 +24,13 @@ function showElement(element) {
   return element;
 }
 
-hideElement(helpScreen);
-hideElement(gameScreen);
-
 setTimeout(() => {
   loadingScreen.classList.add("hidden");
 }, 3000);
+
+// function scrollScreen(x, y) {
+//   document.querySelector(".game-display").scrollTo(x, y);
+// }
 
 startButton.addEventListener("click", (a) => {
   hideElement(initialScreen);

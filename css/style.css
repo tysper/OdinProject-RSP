@@ -27,7 +27,7 @@ html {
 }
 
 .container {
-  padding: 7.5rem 3.75rem 7.5rem 2rem;
+  padding: 7.5rem 0;
   height: 100%;
 }
 
@@ -79,6 +79,7 @@ html {
   gap: 2rem;
   overflow-x: hidden;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 /* ====HELP SECTION==== */
