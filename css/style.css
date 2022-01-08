@@ -124,6 +124,7 @@ html {
 
 .main-screen {
   height: 100%;
+  flex: 1 0 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -153,6 +154,7 @@ html {
 /* ====GAME SCREEN SECTION==== */
 .start-screen {
   height: 100%;
+  flex: 1 0 350px;
   display: flex;
   transition: visibility ease 0.3s;
   flex-direction: column;
