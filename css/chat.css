@@ -1,0 +1,34 @@
+.match-display {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 0.5rem;
+  width: 341px;
+  overflow-y: hidden;
+}
+
+.blank-space {
+  margin-bottom: auto;
+}
+
+.real-player {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: white;
+  display: inline-block;
+  align-self: flex-end;
+  background-color: #364fc7;
+  padding: 10px;
+  border-radius: 8px 8px 0 8px;
+}
+
+.pc-player {
+  align-self: flex-start;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  background-color: #d3d3d3;
+  padding: 10px;
+  border-radius: 8px 8px 8px 0;
+}

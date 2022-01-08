@@ -49,4 +49,4 @@ setTimeout(() => {
   loadingScreen.classList.add("hidden");
 }, 3000);
 
-toggleClass("scrollToMain", screens);
+toggleClass("scrollToGame", screens);

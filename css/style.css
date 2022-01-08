@@ -166,6 +166,7 @@ html {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.2rem;
+  padding-right: 3rem;
 }
 
 .back-btn {
@@ -211,7 +212,7 @@ html {
 }
 
 /* =====LOADING==== */
-.loading {
+/* .loading {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,22 +239,22 @@ html {
   to {
     transform: rotate(1turn);
   }
-}
+} */
 
 /* ====SCROLL ANIMATIONS==== */
 .scrollToMain {
   transform: translateX(-350px);
-  transition: transform ease 0.3s;
+  transition: transform ease-in 0.3s;
 }
 
 .scrollToHelp {
   transform: translateX(0);
-  transition: transform ease 0.3s;
+  transition: transform ease-in 0.3s;
 }
 
 .scrollToGame {
   transform: translateX(-700px);
-  transition: transform ease 0.3s;
+  transition: transform ease-in 0.3s;
 }
 /* ====HIDDEN CLASS==== */
 
