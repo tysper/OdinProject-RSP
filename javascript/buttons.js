@@ -10,10 +10,6 @@ const initialScreen = document.querySelector(".main-screen");
 const gameScreen = document.querySelector(".start-screen");
 const helpScreen = document.querySelector(".help-screen");
 
-initialScreen.scrollIntoView();
-hideElement(helpScreen);
-hideElement(gameScreen);
-
 function hideElement(element) {
   element.style.visibility = "hidden";
   return element;
@@ -55,3 +51,7 @@ helpButton.addEventListener("click", (a) => {
   helpScreen.scrollIntoView({ behavior: "smooth", block: "center" });
   showElement(helpScreen);
 });
+
+initialScreen.scrollIntoView();
+hideElement(helpScreen);
+hideElement(gameScreen);
