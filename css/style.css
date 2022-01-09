@@ -197,8 +197,8 @@ html {
 .match-display {
   border: 3px solid #333;
   border-radius: 8px;
-  height: 371px;
-  flex: 1 1 371px;
+  /* height: 371px; */
+  flex: 0 0 371px;
   margin-bottom: 1.2rem;
 }
 
@@ -207,9 +207,8 @@ html {
   justify-content: space-between;
 }
 .option-btn {
-  flex: 0 1 9.5rem;
+  flex: 0 1 10.5rem;
   padding: 1.8rem 0;
-  width: 9.5rem;
   font-size: 1.4rem;
 }
 
@@ -264,4 +263,8 @@ html {
   display: none;
   visibility: none;
   transition: 1s;
+}
+
+button {
+  touch-action: manipulation;
 }
