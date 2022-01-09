@@ -20,7 +20,6 @@ function toggleClass(className, elementsList) {
   });
   return elementsList;
 }
-
 // ====EVENT LISTENERS ====
 startButton.addEventListener("click", (a) => {
   toggleClass("scrollToMain", screens);

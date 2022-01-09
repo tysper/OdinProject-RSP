@@ -76,7 +76,8 @@ html {
 .game-display {
   max-width: 350px;
   display: flex;
-  /* gap: 2rem; */
+  padding-left: 1rem;
+  padding-right: 1rem;
   overflow-x: hidden;
   position: relative;
   scroll-behavior: smooth;
@@ -154,7 +155,7 @@ html {
 /* ====GAME SCREEN SECTION==== */
 .start-screen {
   height: 100%;
-  flex: 1 0 350px;
+  flex: 1 0 100%;
   display: flex;
   transition: visibility ease 0.3s;
   flex-direction: column;
@@ -196,7 +197,7 @@ html {
 .match-display {
   border: 3px solid #333;
   border-radius: 8px;
-  min-width: 345px;
+  min-width: 100%;
   flex: 1 1 auto;
   margin-bottom: 1.2rem;
 }
@@ -207,7 +208,7 @@ html {
 }
 .option-btn {
   padding: 1.8rem 0;
-  width: 11rem;
+  width: 10rem;
   font-size: 1.4rem;
 }
 
