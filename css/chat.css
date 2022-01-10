@@ -10,11 +10,7 @@
   padding: 15px;
   gap: 15px;
   transition: all ease 0.3s;
-  /* justify-content: end; */
-}
-
-.blank-space {
-  margin-bottom: auto;
+  justify-content: end;
 }
 
 .chat-bubble {
@@ -22,8 +18,8 @@
   font-weight: 500;
   padding: 10px;
   display: inline-block;
-  text-transform: lowercase;
   transition: all ease 0.4s;
+  max-width: 250px;
 }
 
 .real-player {
