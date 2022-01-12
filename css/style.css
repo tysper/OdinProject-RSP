@@ -24,13 +24,12 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 0;
 }
 
 .container {
   margin: auto 0;
   width: 100vw;
-  height: 520px;
+  height: 550px;
 }
 
 .primary-heading {
@@ -103,6 +102,7 @@ html {
 .help-screen {
   flex: 0 0 350px;
   transition: visibility ease 0.3s;
+  padding: 3rem 1rem;
 }
 
 .help-bar {
@@ -146,6 +146,7 @@ html {
   justify-content: space-between;
   transition: visibility ease 0.3s;
   align-items: center;
+  padding: 3rem 0;
 }
 
 .buttons-container {
@@ -173,6 +174,7 @@ html {
   flex: 1 0 100%;
   display: flex;
   transition: visibility ease 0.3s;
+  padding: 3rem 0;
   flex-direction: column;
 }
 
@@ -213,7 +215,7 @@ html {
   border: 3px solid #333;
   border-radius: 8px;
   /* height: 371px; */
-  flex: 0 0 371px;
+  flex: 1 1 auto;
   margin-bottom: 1.2rem;
 }
 
