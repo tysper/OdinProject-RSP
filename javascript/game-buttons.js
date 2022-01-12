@@ -198,5 +198,3 @@ playAgainButton.addEventListener("click", () => {
 talkToPlayer(
   `Welcome to Rock, Paper and Scissors! It is nice to have you here! To begin choose your first move and I will choose mine.`
 );
-
-showResults("You've won!", 0);
