@@ -27,8 +27,9 @@ html {
 }
 
 .container {
-  padding: 7.5rem 0;
-  height: 100%;
+  margin: auto 0;
+  width: 100vw;
+  height: 520px;
 }
 
 .primary-heading {
@@ -73,12 +74,25 @@ html {
   box-shadow: 0 0 5rem rgba(0, 0, 0, 0.1);
 }
 
+.tertiary-btn {
+  color: white;
+  border: 3px solid white;
+  background-color: transparent;
+  font-size: 1.8rem;
+  margin-top: 30px;
+  padding: 1rem 4rem;
+}
+
+.tertiary-btn:hover {
+  transform: scale(1.05);
+}
+
 .game-display {
   max-width: 350px;
   display: flex;
   padding-left: 1rem;
   padding-right: 1rem;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   scroll-behavior: smooth;
 }
@@ -213,7 +227,7 @@ html {
 }
 
 /* =====LOADING==== */
-.loading {
+/* .loading {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,7 +248,7 @@ html {
   border: 15px solid rgb(223, 223, 223);
   border-top: 15px solid #364fc7;
   animation: rotate 1s ease 10;
-}
+} */
 
 @keyframes rotate {
   to {
@@ -257,14 +271,72 @@ html {
   transform: translateX(-700px);
   transition: transform ease-in 0.3s;
 }
+
+button {
+  touch-action: manipulation;
+}
+/* ====RESULT SCREEN ==== */
+
+.result-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: all ease 0.5s;
+}
+
+.result-ball {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 150px;
+  height: 150px;
+  background-color: var(--result-color);
+  border-radius: 50%;
+  animation: scale-up 1s forwards;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: scale-down 0.4s forwards;
+}
+
+.results-text {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.results-icon {
+  width: 72px;
+  height: 72px;
+  color: white;
+}
+
+@keyframes scale-down {
+  100% {
+    transform: scale(0.05);
+  }
+}
+@keyframes scale-up {
+  100% {
+    transform: scale(20);
+  }
+}
+
 /* ====HIDDEN CLASS==== */
 
 .hidden {
   display: none;
   visibility: none;
   transition: 1s;
-}
-
-button {
-  touch-action: manipulation;
 }

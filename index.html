@@ -66,7 +66,7 @@
             </div>
           </div>
           <div class="match-display">
-            <div class="inner-display"></div>
+            <div class="inner-display hidden"></div>
           </div>
           <div class="options-container">
             <button class="button option-btn primary-btn rock-btn">Rock</button>
@@ -80,5 +80,20 @@
         </div>
       </div>
     </section>
+    <div class="result-screen hidden">
+      <div class="result-ball" style="--result-color: teal">
+        <div class="icon-container">
+          <ion-icon
+            class="results-icon winner"
+            name="checkmark-outline"
+          ></ion-icon>
+          <ion-icon class="results-icon looser" name="close-outline"></ion-icon>
+          <p class="results-text">You've won!</p>
+          <button class="button tertiary-btn play-again-btn">
+            Play again!
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

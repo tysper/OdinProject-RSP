@@ -4,6 +4,7 @@
 const rockButton = document.querySelector(".rock-btn");
 const paperButton = document.querySelector(".paper-btn");
 const scissorButton = document.querySelector(".scissor-btn");
+const playAgainButton = document.querySelector(".play-again-btn");
 
 // ====Display and Visuals ====
 const matchDisplay = document.querySelector(".inner-display");
@@ -30,6 +31,13 @@ const winsTo = {
   paper: ["rock"],
 };
 
+const resultScreen = document.querySelector(".result-screen");
+const resultBall = document.querySelector(".result-ball");
+const resultText = document.querySelector(".results-text");
+const winnerIcon = document.querySelector(".results-icon.winner");
+const looserIcon = document.querySelector(".results-icon.looser");
+const iconContainer = document.querySelector(".icon-container");
+
 // ====Functions ====
 function addMessage(player, text, target) {
   // adds the message to the target
@@ -48,7 +56,10 @@ function talkToPlayer(text) {
 
 function talkToPc(text) {
   // display a message from the real player
-  addMessage("real-player", `${text}`, matchDisplay).scrollIntoView();
+  addMessage("real-player", `${text}`, matchDisplay).scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+  });
   return text;
 }
 
@@ -95,6 +106,41 @@ function updatePoints(points, el) {
   return el;
 }
 
+function showResults(text, icon) {
+  resultText.innerHTML = `${text}`;
+  if (icon === 0) {
+    winnerIcon.classList.remove("hidden");
+    looserIcon.classList.add("hidden");
+    resultBall.style.setProperty("--result-color", "#51cf66");
+  } else {
+    looserIcon.classList.remove("hidden");
+    winnerIcon.classList.add("hidden");
+    resultBall.style.setProperty("--result-color", "#fa5252");
+  }
+  resultScreen.classList.toggle("hidden");
+  return resultScreen;
+}
+
+function resetMatch() {
+  playerPoints = 0;
+  pcPoints = 0;
+  updatePoints(0, playerPointsEl);
+  updatePoints(0, pcPointsEl);
+  document.querySelectorAll(".chat-bubble").forEach((x) => x.remove());
+  talkToPlayer(
+    `Nice to see you've liked the game! To begin choose your first move and I will choose mine.`
+  );
+  return 1;
+}
+
+function checkWinner() {
+  if (playerPoints > 4) {
+    showResults("You've won!", 0);
+  } else if (pcPoints > 4) {
+    showResults("You've lost!", 1);
+  }
+  return true;
+}
 function startRound(realPlayer) {
   if (!processingMove) {
     //  state handler
@@ -108,7 +154,10 @@ function startRound(realPlayer) {
       let roundWinner = returnWinner(currentPlayerMove[0], currentPcMove[0]);
       // Show to the player the pc move and tell who wins
       talkToPlayer(`${currentPcMove[0]}`);
-      talkToPlayer(returnMessage(roundWinner))[1].scrollIntoView();
+      talkToPlayer(returnMessage(roundWinner))[1].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
       // Update the points system and the elements too
       if (roundWinner !== 0) {
         if (roundWinner === 1) {
@@ -119,6 +168,9 @@ function startRound(realPlayer) {
           updatePoints(pcPoints, pcPointsEl);
         }
       }
+
+      setTimeout(() => checkWinner(), 2000);
+
       // state handler
       processingMove = false;
     }, 2000);
@@ -138,7 +190,13 @@ scissorButton.addEventListener("click", () => {
   startRound("scissor");
 });
 
-// ====Game Logic
+playAgainButton.addEventListener("click", () => {
+  resetMatch();
+  resultScreen.classList.toggle("hidden");
+});
+// ====Game Logic =====
 talkToPlayer(
   `Welcome to Rock, Paper and Scissors! It is nice to have you here! To begin choose your first move and I will choose mine.`
 );
+
+showResults("You've won!", 0);
