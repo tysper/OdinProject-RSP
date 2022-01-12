@@ -227,7 +227,7 @@ html {
 }
 
 /* =====LOADING==== */
-/* .loading {
+.loading {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -248,7 +248,7 @@ html {
   border: 15px solid rgb(223, 223, 223);
   border-top: 15px solid #364fc7;
   animation: rotate 1s ease 10;
-} */
+}
 
 @keyframes rotate {
   to {
