@@ -192,7 +192,7 @@ scissorButton.addEventListener("click", () => {
 
 playAgainButton.addEventListener("click", () => {
   resetMatch();
-  resultScreen.classList.toggle("hidden");
+  resultScreen.classList.add("hidden");
 });
 // ====Game Logic =====
 talkToPlayer(

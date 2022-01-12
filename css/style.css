@@ -290,16 +290,15 @@ button {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transition: all ease 0.5s;
 }
 
 .result-ball {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  position: fixed;
   width: 150px;
   height: 150px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background-color: var(--result-color);
   border-radius: 50%;
   animation: scale-up 1s forwards;
@@ -310,7 +309,8 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  animation: scale-down 0.4s forwards;
+  z-index: 3;
+  animation: scale-down 0.3s ease forwards;
 }
 
 .results-text {
@@ -326,20 +326,34 @@ button {
 }
 
 @keyframes scale-down {
+  20% {
+    -webkit-transform: translateY(5px) scale(1.5);
+  }
   100% {
-    transform: scale(0.05);
+    -webkit-transform: scale(1) translateY(0);
   }
 }
+
 @keyframes scale-up {
   100% {
+    -webkit-transform: scale(20);
     transform: scale(20);
   }
 }
 
+.hide-it {
+  transform: opacity(1);
+  animation: disapear 1s ease forwards;
+}
+
+@keyframes disapear {
+  100% {
+    transform: opacity(0);
+  }
+}
 /* ====HIDDEN CLASS==== */
 
 .hidden {
   display: none;
   visibility: none;
-  transition: 1s;
 }
