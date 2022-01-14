@@ -13,6 +13,9 @@ const gameScreen = document.querySelector(".start-screen");
 const helpScreen = document.querySelector(".help-screen");
 const screens = [helpScreen, initialScreen, gameScreen];
 
+//  ====FILES ====
+const buttonSound = new Audio("../sounds/button-sound.mp3");
+
 // ====FUNCTIONS =====
 function toggleClass(className, elementsList) {
   elementsList.forEach((x) => {
@@ -25,15 +28,18 @@ function toggleClass(className, elementsList) {
 startButton.addEventListener("click", (a) => {
   toggleClass("scrollToMain", screens);
   toggleClass("scrollToGame", screens);
+  buttonSound.play();
 });
 
 backButton.addEventListener("click", (a) => {
   toggleClass("scrollToGame", screens);
   toggleClass("scrollToMain", screens);
+  buttonSound.play();
 });
 
 backButtonHelp.addEventListener("click", (a) => {
   toggleClass("scrollToMain", screens);
+  buttonSound.play();
 });
 
 helpButton.addEventListener("click", (a) => {
@@ -42,6 +48,7 @@ helpButton.addEventListener("click", (a) => {
   setTimeout(() => {
     toggleClass("scrollToHelp", screens);
   }, 300);
+  buttonSound.play();
 });
 
 // ====INITIAL CONFIG ====

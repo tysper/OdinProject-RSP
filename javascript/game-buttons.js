@@ -38,6 +38,12 @@ const winnerIcon = document.querySelector(".results-icon.winner");
 const looserIcon = document.querySelector(".results-icon.looser");
 const iconContainer = document.querySelector(".icon-container");
 
+// ====Files ====
+const buttonAudio = new Audio("../sounds/button-sound.mp3");
+const bubbleSound = new Audio("../sounds/bubble-sound.mp3");
+const winSound = new Audio("../sounds/win-sound.mp3");
+const looserSound = new Audio("../sounds/game-over-sound.mp3");
+
 // ====Functions ====
 function addMessage(player, text, target) {
   // adds the message to the target
@@ -60,6 +66,7 @@ function talkToPc(text) {
     behavior: "smooth",
     block: "center",
   });
+  bubbleSound.play();
   return text;
 }
 
@@ -112,10 +119,12 @@ function showResults(text, icon) {
     winnerIcon.classList.remove("hidden");
     looserIcon.classList.add("hidden");
     resultBall.style.setProperty("--result-color", "#51cf66");
+    winSound.play();
   } else {
     looserIcon.classList.remove("hidden");
     winnerIcon.classList.add("hidden");
     resultBall.style.setProperty("--result-color", "#fa5252");
+    looserSound.play();
   }
   resultScreen.classList.toggle("hidden");
   return resultScreen;
@@ -158,6 +167,7 @@ function startRound(realPlayer) {
         behavior: "smooth",
         block: "center",
       });
+      bubbleSound.play();
       // Update the points system and the elements too
       if (roundWinner !== 0) {
         if (roundWinner === 1) {
@@ -169,7 +179,7 @@ function startRound(realPlayer) {
         }
       }
 
-      setTimeout(() => checkWinner(), 2000);
+      setTimeout(() => checkWinner(), 1000);
 
       // state handler
       processingMove = false;
@@ -192,6 +202,7 @@ scissorButton.addEventListener("click", () => {
 
 playAgainButton.addEventListener("click", () => {
   resetMatch();
+  buttonAudio.play();
   resultScreen.classList.add("hidden");
 });
 // ====Game Logic =====
