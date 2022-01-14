@@ -25,8 +25,8 @@ function toggleClass(className, elementsList) {
   return elementsList;
 }
 
-function playSound(soundURL) {
-  const audio = new Audio(soundURL);
+function playSound(sound) {
+  const audio = sound;
   audio.play();
   return audio;
 }
@@ -34,18 +34,18 @@ function playSound(soundURL) {
 startButton.addEventListener("click", (a) => {
   toggleClass("scrollToMain", screens);
   toggleClass("scrollToGame", screens);
-  playSound("../sounds/button-sound.mp3");
+  playSound(buttonSound);
 });
 
 backButton.addEventListener("click", (a) => {
   toggleClass("scrollToGame", screens);
   toggleClass("scrollToMain", screens);
-  playSound("../sounds/button-sound.mp3");
+  playSound(buttonSound);
 });
 
 backButtonHelp.addEventListener("click", (a) => {
   toggleClass("scrollToMain", screens);
-  playSound("../sounds/button-sound.mp3");
+  playSound(buttonSound);
 });
 
 helpButton.addEventListener("click", (a) => {
@@ -54,7 +54,7 @@ helpButton.addEventListener("click", (a) => {
   setTimeout(() => {
     toggleClass("scrollToHelp", screens);
   }, 300);
-  playSound("../sounds/button-sound.mp3");
+  playSound(buttonSound);
 });
 
 // ====INITIAL CONFIG ====
