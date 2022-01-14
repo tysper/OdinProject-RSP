@@ -26,23 +26,27 @@ function toggleClass(className, elementsList) {
 
 // ====EVENT LISTENERS ====
 startButton.addEventListener("click", (a) => {
+  buttonSound.currentTime = 0;
   toggleClass("scrollToMain", screens);
   toggleClass("scrollToGame", screens);
   buttonSound.play();
 });
 
 backButton.addEventListener("click", (a) => {
+  buttonSound.currentTime = 0;
   toggleClass("scrollToGame", screens);
   toggleClass("scrollToMain", screens);
   buttonSound.play();
 });
 
 backButtonHelp.addEventListener("click", (a) => {
+  buttonSound.currentTime = 0;
   toggleClass("scrollToMain", screens);
   buttonSound.play();
 });
 
 helpButton.addEventListener("click", (a) => {
+  buttonSound.currentTime = 0;
   toggleClass("scrollToMain", screens);
   toggleClass("scrollToHelp", screens);
   setTimeout(() => {
