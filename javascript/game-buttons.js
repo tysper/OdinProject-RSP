@@ -40,12 +40,12 @@ const looserIcon = document.querySelector(".results-icon.looser");
 const iconContainer = document.querySelector(".icon-container");
 
 // ====Files ====
-const buttonAudio = new Audio("../sounds/button-sound.mp3");
+// const buttonAudio = new Audio("../sounds/button-sound.mp3");
 const bubbleSound = new Audio("../sounds/bubble-sound.mp3");
 const winSound = new Audio("../sounds/win-sound.mp3");
 const looserSound = new Audio("../sounds/game-over-sound.mp3");
 
-buttonAudio.preload = "auto";
+// buttonAudio.preload = "auto";
 bubbleSound.preload = "auto";
 winSound.preload = "auto";
 looserSound.preload = "auto";
@@ -216,7 +216,7 @@ scissorButton.addEventListener("click", () => {
 
 playAgainButton.addEventListener("click", () => {
   resetMatch();
-  playSound(buttonAudio);
+  playSound(buttonSound);
   resultScreen.classList.add("hidden");
 });
 // ====Game Logic =====
