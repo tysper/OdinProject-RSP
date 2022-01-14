@@ -45,10 +45,10 @@ const bubbleSound = new Audio("../sounds/bubble-sound.mp3");
 const winSound = new Audio("../sounds/win-sound.mp3");
 const looserSound = new Audio("../sounds/game-over-sound.mp3");
 
-buttonAudio.preload = "metadata";
-bubbleSound.preload = "metadata";
-winSound.preload = "metadata";
-looserSound.preload = "metadata";
+buttonAudio.preload = "auto";
+bubbleSound.preload = "auto";
+winSound.preload = "auto";
+looserSound.preload = "auto";
 // ====Functions ====
 function addMessage(player, text, target) {
   // adds the message to the target
