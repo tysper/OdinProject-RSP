@@ -40,16 +40,22 @@ const looserIcon = document.querySelector(".results-icon.looser");
 const iconContainer = document.querySelector(".icon-container");
 
 // ====Files ====
-const buttonAudio = new Audio("../sounds/button-sound.mp3");
-const bubbleSound = new Audio("../sounds/bubble-sound.mp3");
-const winSound = new Audio("../sounds/win-sound.mp3");
-const looserSound = new Audio("../sounds/game-over-sound.mp3");
+// const buttonAudio = new Audio("../sounds/button-sound.mp3");
+// const bubbleSound = new Audio("../sounds/bubble-sound.mp3");
+// const winSound = new Audio("../sounds/win-sound.mp3");
+// const looserSound = new Audio("../sounds/game-over-sound.mp3");
 
-buttonAudio.preload = "auto";
-bubbleSound.preload = "auto";
-winSound.preload = "auto";
-looserSound.preload = "auto";
+// buttonAudio.preload = "auto";
+// bubbleSound.preload = "auto";
+// winSound.preload = "auto";
+// looserSound.preload = "auto";
 // ====Functions ====
+function playSound(soundURL) {
+  const audio = new Audio(soundURL);
+  audio.play();
+  return audio;
+}
+
 function addMessage(player, text, target) {
   // adds the message to the target
   const el = document.createElement("p");
@@ -71,7 +77,7 @@ function talkToPc(text) {
     behavior: "smooth",
     block: "center",
   });
-  bubbleSound.play();
+  playSound("../sounds/bubble-sound.mp3");
   return text;
 }
 
@@ -124,12 +130,12 @@ function showResults(text, icon) {
     winnerIcon.classList.remove("hidden");
     looserIcon.classList.add("hidden");
     resultBall.style.setProperty("--result-color", "#51cf66");
-    winSound.play();
+    playSound("../sounds/win-sound.mp3");
   } else {
     looserIcon.classList.remove("hidden");
     winnerIcon.classList.add("hidden");
     resultBall.style.setProperty("--result-color", "#fa5252");
-    looserSound.play();
+    playSound("../sounds/game-over-sound.mp3");
   }
   resultScreen.classList.toggle("hidden");
   return resultScreen;
@@ -173,7 +179,8 @@ function startRound(realPlayer) {
         behavior: "smooth",
         block: "center",
       });
-      bubbleSound.play();
+      playSound("../sounds/bubble-sound.mp3");
+
       // Update the points system and the elements too
       if (roundWinner !== 0) {
         if (roundWinner === 1) {
@@ -209,7 +216,7 @@ scissorButton.addEventListener("click", () => {
 
 playAgainButton.addEventListener("click", () => {
   resetMatch();
-  buttonAudio.play();
+  playSound("../sounds/button-sound.mp3");
   resultScreen.classList.add("hidden");
 });
 // ====Game Logic =====
