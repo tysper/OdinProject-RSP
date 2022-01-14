@@ -5,6 +5,7 @@ const rockButton = document.querySelector(".rock-btn");
 const paperButton = document.querySelector(".paper-btn");
 const scissorButton = document.querySelector(".scissor-btn");
 const playAgainButton = document.querySelector(".play-again-btn");
+const backButton2 = document.querySelector(".back-btn");
 
 // ====Display and Visuals ====
 const matchDisplay = document.querySelector(".inner-display");
@@ -44,6 +45,10 @@ const bubbleSound = new Audio("../sounds/bubble-sound.mp3");
 const winSound = new Audio("../sounds/win-sound.mp3");
 const looserSound = new Audio("../sounds/game-over-sound.mp3");
 
+buttonAudio.preload = "metadata";
+bubbleSound.preload = "metadata";
+winSound.preload = "metadata";
+looserSound.preload = "metadata";
 // ====Functions ====
 function addMessage(player, text, target) {
   // adds the message to the target
@@ -152,6 +157,7 @@ function checkWinner() {
 }
 function startRound(realPlayer) {
   if (!processingMove) {
+    backButton2.disabled = "true";
     //  state handler
     processingMove = true;
     // update current move and show it
@@ -183,6 +189,7 @@ function startRound(realPlayer) {
 
       // state handler
       processingMove = false;
+      backButton2.removeAttribute("disabled");
     }, 2000);
   }
 }
