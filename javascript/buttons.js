@@ -15,7 +15,6 @@ const screens = [helpScreen, initialScreen, gameScreen];
 
 // =====FILES =====
 const buttonSound = new Audio("../sounds/button-sound.mp3");
-buttonSound.preload = "auto";
 
 // ====FUNCTIONS =====
 function toggleClass(className, elementsList) {
