@@ -13,6 +13,7 @@ const gameScreen = document.querySelector(".start-screen");
 const helpScreen = document.querySelector(".help-screen");
 const screens = [helpScreen, initialScreen, gameScreen];
 
+let firstTime = 1;
 // ====FUNCTIONS =====
 function toggleClass(className, elementsList) {
   elementsList.forEach((x) => {
@@ -28,9 +29,18 @@ function playSound(sound) {
 }
 // ====EVENT LISTENERS ====
 startButton.addEventListener("click", (a) => {
+  if (firstTime === 1) {
+    const quietSound = new Audio("../sounds/quiet-sound.mp3");
+    quietSound.play();
+    setTimeout(() => {
+      playButtonSound();
+    }, 500);
+    firstTime -= 1;
+  } else {
+    playButtonSound();
+  }
   toggleClass("scrollToMain", screens);
   toggleClass("scrollToGame", screens);
-  playButtonSound();
 });
 
 backButton.addEventListener("click", (a) => {
