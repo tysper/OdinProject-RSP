@@ -13,9 +13,6 @@ const gameScreen = document.querySelector(".start-screen");
 const helpScreen = document.querySelector(".help-screen");
 const screens = [helpScreen, initialScreen, gameScreen];
 
-// =====FILES =====
-const buttonSound = new Audio("../sounds/button-sound.mp3");
-
 // ====FUNCTIONS =====
 function toggleClass(className, elementsList) {
   elementsList.forEach((x) => {

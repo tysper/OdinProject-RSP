@@ -40,7 +40,7 @@ const looserIcon = document.querySelector(".results-icon.looser");
 const iconContainer = document.querySelector(".icon-container");
 
 // ====Files ====
-// const buttonAudio = new Audio("../sounds/button-sound.mp3");
+const buttonSound = new Audio("../sounds/button-sound.mp3");
 const bubbleSound = new Audio("../sounds/bubble-sound.mp3");
 const winSound = new Audio("../sounds/win-sound.mp3");
 const looserSound = new Audio("../sounds/game-over-sound.mp3");
