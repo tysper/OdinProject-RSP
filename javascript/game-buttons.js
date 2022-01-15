@@ -49,10 +49,12 @@ const looserSound = new Audio("../sounds/game-over-sound.mp3");
 bubbleSound.preload = "auto";
 winSound.preload = "auto";
 looserSound.preload = "auto";
+
 // ====Functions ====
 function playSound(sound) {
   const audio = sound;
   audio.play();
+  audio.currentTime = "0";
   return audio;
 }
 
