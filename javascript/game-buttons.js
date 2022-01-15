@@ -5,7 +5,7 @@ const rockButton = document.querySelector(".rock-btn");
 const paperButton = document.querySelector(".paper-btn");
 const scissorButton = document.querySelector(".scissor-btn");
 const playAgainButton = document.querySelector(".play-again-btn");
-const backButton2 = document.querySelector(".back-btn");
+// const backButton = document.querySelector(".back-btn");
 
 // ====Display and Visuals ====
 const matchDisplay = document.querySelector(".inner-display");
@@ -46,12 +46,12 @@ const winSound = new Audio("../sounds/win-sound.mp3");
 const looserSound = new Audio("../sounds/game-over-sound.mp3");
 
 // ====Functions ====
-function playSound(sound) {
-  const audio = sound;
-  audio.play();
-  audio.currentTime = "0";
-  return audio;
-}
+// function playSound(sound) {
+//   const audio = sound;
+//   audio.play();
+//   audio.currentTime = "0";
+//   return audio;
+// }
 
 function addMessage(player, text, target) {
   // adds the message to the target
@@ -74,7 +74,7 @@ function talkToPc(text) {
     behavior: "smooth",
     block: "center",
   });
-  playSound(bubbleSound);
+  playSound("../sounds/bubble-sound.mp3");
   return text;
 }
 
@@ -127,12 +127,12 @@ function showResults(text, icon) {
     winnerIcon.classList.remove("hidden");
     looserIcon.classList.add("hidden");
     resultBall.style.setProperty("--result-color", "#51cf66");
-    playSound(winSound);
+    playSound("../sounds/win-sound.mp3");
   } else {
     looserIcon.classList.remove("hidden");
     winnerIcon.classList.add("hidden");
     resultBall.style.setProperty("--result-color", "#fa5252");
-    playSound(looserSound);
+    playSound("../sounds/game-over-sound.mp3");
   }
   resultScreen.classList.toggle("hidden");
   return resultScreen;
@@ -160,7 +160,7 @@ function checkWinner() {
 }
 function startRound(realPlayer) {
   if (!processingMove) {
-    backButton2.disabled = "true";
+    backButton.disabled = "true";
     //  state handler
     processingMove = true;
     // update current move and show it
@@ -176,7 +176,7 @@ function startRound(realPlayer) {
         behavior: "smooth",
         block: "center",
       });
-      playSound(bubbleSound);
+      playSound("../sounds/bubble-sound.mp3");
 
       // Update the points system and the elements too
       if (roundWinner !== 0) {
@@ -193,7 +193,7 @@ function startRound(realPlayer) {
 
       // state handler
       processingMove = false;
-      backButton2.removeAttribute("disabled");
+      backButton.removeAttribute("disabled");
     }, 2000);
   }
 }
