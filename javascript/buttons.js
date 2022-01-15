@@ -33,18 +33,18 @@ function playSound(sound) {
 startButton.addEventListener("click", (a) => {
   toggleClass("scrollToMain", screens);
   toggleClass("scrollToGame", screens);
-  playSound("../sounds/button-sound.mp3");
+  playButtonSound();
 });
 
 backButton.addEventListener("click", (a) => {
   toggleClass("scrollToGame", screens);
   toggleClass("scrollToMain", screens);
-  playSound("../sounds/button-sound.mp3");
+  playButtonSound();
 });
 
 backButtonHelp.addEventListener("click", (a) => {
   toggleClass("scrollToMain", screens);
-  playSound("../sounds/button-sound.mp3");
+  playButtonSound();
 });
 
 helpButton.addEventListener("click", (a) => {
@@ -53,7 +53,7 @@ helpButton.addEventListener("click", (a) => {
   setTimeout(() => {
     toggleClass("scrollToHelp", screens);
   }, 300);
-  playSound("../sounds/button-sound.mp3");
+  playButtonSound();
 });
 
 // ====INITIAL CONFIG ====
