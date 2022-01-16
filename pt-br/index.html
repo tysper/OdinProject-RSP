@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Rock, Paper &amp; Scissors</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/chat.css" />
+    <title>Pedra, Papel &amp; Tesoura</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/chat.css" />
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -18,32 +18,30 @@
       defer
     ></script>
     <script defer src="./javascript/game-buttons.js"></script>
-    <script defer src="./javascript/buttons.js"></script>
+    <script defer src="../javascript/buttons.js"></script>
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="./images/apple-touch-icon.png"
+      href="../images/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="../images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./images/favicon-16x16.png"
+      href="../images/favicon-16x16.png"
     />
-    <link rel="manifest" href="./images/site.webmanifest" />
+    <link rel="manifest" href="../images/site.webmanifest" />
     <link
       rel="mask-icon"
-      href="./images/safari-pinned-tab.svg"
+      href="../images/safari-pinned-tab.svg"
       color="#5bbad5"
     />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <div class="loading">
@@ -56,21 +54,22 @@
             <button class="back-btn-help">
               <ion-icon name="chevron-back-outline"></ion-icon>
             </button>
-            <h2>Rock, Paper and Scissors Rules:</h2>
+            <h2>Manual Pedra, Papel &amp; Tesoura</h2>
           </div>
           <p>
-            The game itself is pretty simple and it looks a lot like the real
-            life game, all you gotta do is press the buttons to choose your next
-            move, the computer will choose its move automatically, and the score
-            will be added to the match winner, whoever gets five points first is
-            the winner. <strong>Good luck!</strong>
+            O jogo em si é muito simples e bem parecido com o jogo da vida real.
+            Tudo o que você precisa fazer é clicar no botão que você quer
+            realizar a sua próxima jogada. O computador irá selecionar uma
+            jogada para competir com você. <strong>Boa Sorte!</strong>
           </p>
         </div>
         <div class="main-screen">
-          <h1 class="primary-heading">Rock, Paper and Scissors</h1>
+          <h1 class="primary-heading" style="text-align: center">
+            Pedra, Papel &amp; Tesoura
+          </h1>
           <div class="buttons-container">
-            <button class="button primary-btn start-btn">Start</button>
-            <button class="button secondary-btn help-btn">Help</button>
+            <button class="button primary-btn start-btn">Começar</button>
+            <button class="button secondary-btn help-btn">Ajuda</button>
 
             <footer><p class="author-copyrights">&copy; Pedro Nunes</p></footer>
           </div>
@@ -82,11 +81,11 @@
             </button>
             <div class="scores-container">
               <p class="score-text">
-                Your Score: <span class="score-points">0</span>
+                Seus pontos: <span class="score-points">0</span>
               </p>
 
               <p class="score-text">
-                PC Score: <span class="pc-points">0</span>
+                Pontos do PC: <span class="pc-points">0</span>
               </p>
             </div>
           </div>
@@ -94,12 +93,14 @@
             <div class="inner-display hidden"></div>
           </div>
           <div class="options-container">
-            <button class="button option-btn primary-btn rock-btn">Rock</button>
+            <button class="button option-btn primary-btn rock-btn">
+              Pedra
+            </button>
             <button class="button option-btn primary-btn paper-btn">
-              Paper
+              Papel
             </button>
             <button class="button option-btn primary-btn scissor-btn">
-              Scissors
+              Tesoura
             </button>
           </div>
         </div>
@@ -114,7 +115,7 @@
         ></ion-icon>
         <ion-icon class="results-icon looser" name="close-outline"></ion-icon>
         <p class="results-text">You've won!</p>
-        <button class="button tertiary-btn play-again-btn">Play again!</button>
+        <button class="button tertiary-btn play-again-btn">Jogar Denovo</button>
       </div>
     </div>
   </body>
